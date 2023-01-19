@@ -26,6 +26,16 @@ hr {
   border: none;
 }
 
+.date {
+  padding: 6px 16px;
+  margin-right: 20px;
+  font-size: 2.5rem;
+  color: red;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 40px;
+}
+
 .display-book {
   width: 100%;
 }
