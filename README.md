@@ -71,7 +71,7 @@
 > Deployed Link Below: 
 >  soon will be available
 
-- [Live Demo Link](https://roniy68.github.io/book-list)
+- [Live Demo Link](https://roniy68.github.io/awesome-books-es6/)
   
 
 

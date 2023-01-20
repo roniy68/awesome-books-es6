@@ -1,27 +1,13 @@
 import Book from './modules/Book.js';
-class BookCollection {
-  constructor() {
-    this.books = JSON.parse(localStorage.getItem('book-list'));
-  }
+import BookCollection from './modules/BookCollection.js';
+import { DateTime } from './modules/luxon.js';
 
-  getBooks() {
-    return this.books;
-  }
-
-  addBook(book) {
-    this.books.push(book);
-    this.#writeLocalStorage();
-  }
-
-  removeBook(book) {
-    this.books.splice(this.books.indexOf(book), 1);
-    this.#writeLocalStorage();
-  }
-
-  #writeLocalStorage() {
-    localStorage.setItem('book-list', JSON.stringify(this.books));
-  }
-}
+// Add a clock
+const clockElement = document.getElementById('date');
+const clock = () => {
+  clockElement.textContent = DateTime.now().toISO();
+};
+setInterval(clock, 1000);
 
 // load booklist in main page 'display-book' section
 function loadBooksList() {
@@ -82,19 +68,19 @@ const contactBtn = document.getElementById('contact-link');
 const displayBk = document.querySelector('.display-book');
 const addBk = document.querySelector('.add-book');
 const contact = document.querySelector('.contact-section');
-listbtn.onclick = function () {
+listbtn.onclick = () => {
   displayBk.style.display = 'block';
   addBk.style.display = 'none';
   contact.style.display = 'none';
 };
 
-addBookBtn.onclick = function () {
+addBookBtn.onclick = () => {
   displayBk.style.display = 'none';
   addBk.style.display = 'block';
   contact.style.display = 'none';
 };
 
-contactBtn.onclick = function () {
+contactBtn.onclick = () => {
   displayBk.style.display = 'none';
   addBk.style.display = 'none';
   contact.style.display = 'block';
